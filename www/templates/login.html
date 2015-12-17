@@ -1,0 +1,31 @@
+<ion-modal-view ng-controller="LoginCtlr">
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item" ng-show="!isAuthenticated()">
+          <button class="button button-block button-positive" ng-click="authenticate('facebook')">Login with Facebook</button>
+        </label>
+          <label class="item" ng-show="isAuthenticated()">
+          <button class="button button-block button-positive" ng-click="logout()">Logout</button>
+        </label>
+      </div>
+      
+      <div class="list list-inset padding">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="loginData.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="loginData.password">
+          </label>
+          <p ng-show="checkForFailure">Please enter proper username and password</p>
+          <button class="button button-block button-positive" type="submit">Login</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

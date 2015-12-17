@@ -1,0 +1,12 @@
+<ion-view view-title="Store">
+  <ion-content>
+    <div id="map" data-tap-disabled="true"></div>
+      <ion-list>
+            <ion-item ng-repeat="store in stores track by $index" >
+                <p>{{store.name}}</p>
+                <p>{{store.address}}</p>
+                <p>{{store.city}}</p>
+            </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>
